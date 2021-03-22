@@ -28,8 +28,14 @@
 
 <style lang="scss" scoped>
     header{
+        position: fixed;
+        top: 0;
+        width: 100%;
         display: flex;
         box-sizing: border-box;
+        grid-column-start: 1;
+        grid-column-end: 5;
+        border: 1px solid red;
         height: 70px;
         padding-right: 15px;
         .logo-wrapper{
