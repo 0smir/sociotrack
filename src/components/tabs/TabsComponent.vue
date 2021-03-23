@@ -3,8 +3,8 @@
         <TabItemComponent v-for="tab in tabs"
                           :tab="tab"
                           :isActive="tab == currentTab"
+                          @change-active="changeElement"
         >
-
         </TabItemComponent>
     </ul>
     
@@ -25,10 +25,21 @@
             currentTab(){
                 return this.initialActiveTab ? this.tabs.find((tab) => tab === this.initialActiveTab) : this.tabs[0]
             }
+        },
+        methods:{
+            changeElement(tab){
+                this.$emit('change-sort', tab);
+            }
         }
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    .tabs-list{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 250px;
+    }
 
 </style>

@@ -26,6 +26,7 @@
     }
     .footer-link-list{
         display: flex;
+        position: relative;
         flex-wrap: wrap;
         justify-content: center;
         margin: 0 auto;
@@ -35,7 +36,6 @@
         border-top: 1px solid rgba(0, 0, 0, .07);
     }
     .footer-link-item{
-        /*background: pink;*/
         margin-bottom: 15px;
         width: calc(100% / 3);
     }
@@ -44,7 +44,7 @@
         justify-content: center;
         padding: 5px;
         color: #147A42;
-        font-family: 'Roboto';
+        font-family: 'Roboto', sans-serif;
         font-weight: 400;
         font-size: 12px;
         line-height: 1.17;

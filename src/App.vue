@@ -38,8 +38,10 @@
     grid-template-rows: 70px  auto 96px;
   }
   main{
-    background: #ccc;
+    padding-top: 70px;
+    background: #EFF7ED;
     height: calc(100vh - 70px);
+    justify-content: center;
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 2;

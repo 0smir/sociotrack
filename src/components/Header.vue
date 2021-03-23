@@ -28,24 +28,29 @@
 
 <style lang="scss" scoped>
     header{
-        position: fixed;
-        top: 0;
-        width: 100%;
         display: flex;
         box-sizing: border-box;
         grid-column-start: 1;
         grid-column-end: 5;
-        border: 1px solid red;
         height: 70px;
         padding-right: 15px;
         .logo-wrapper{
             display: flex;
+            position: relative;
             justify-content: center;
             align-items: center;
             width: 100%;
             max-width: 240px;
             background:  #2DBC80;
             margin-right: auto;
+            &::after{
+                display: block;
+                position: absolute;
+                content: '';
+                height: 100%;
+                width: 100%;
+                background: rgba(#fff, 0.1);
+            }
         }
         .right-header-content{
             display: flex;

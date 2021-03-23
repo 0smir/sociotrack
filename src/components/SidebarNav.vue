@@ -14,23 +14,22 @@
             <ul class="nav-list">
                 <li class="nav-item">
                     <router-link exact to="/" class="nav-link">
-                        <span class="nav-icon nav-icon--dashboard"></span> Dashboard</router-link></li>
+                        <span class="nav-icon nav-icon--dashboard"></span> <span class="link-text">Dashboard</span></router-link></li>
                 <li class="nav-item">
                     <router-link exact to="/feed" class="nav-link">
-                        <span class="nav-icon nav-icon--feed"></span> Social Feed</router-link></li>
+                        <span class="nav-icon nav-icon--feed"></span> <span class="link-text">Social Feed</span></router-link></li>
                 <li class="nav-item">
                     <router-link exact to="/friends" class="nav-link">
-                        <span class="nav-icon nav-icon--friends"></span> Invite Friends</router-link></li>
+                        <span class="nav-icon nav-icon--friends"></span> <span class="link-text">Invite Friends</span></router-link></li>
                 <li class="nav-item">
                     <router-link exact to="/settings" class="nav-link">
-                        <span class="nav-icon nav-icon--settings"></span> Settings</router-link></li>
+                        <span class="nav-icon nav-icon--settings"></span> <span class="link-text">Settings</span></router-link></li>
                 <li class="nav-item">
                     <button class="btn btn-logout">
-                        <span class="nav-icon nav-icon--logout"></span> Log out</button></li>
+                        <span class="nav-icon nav-icon--logout"></span> <span class="link-text">Log out</span></button></li>
             </ul>
         </nav>
     </div>
-    
 </template>
 
 <script>
@@ -41,6 +40,11 @@
                 detailsShow: false
             }
         },
+        // computed:{
+            // userFullName(){
+            //     return this.user_data.firstName + ' ' + this.user_data.lastName
+            // }
+        // },
         methods:{
             showDetails(){
                 this.detailsShow = !this.detailsShow;
