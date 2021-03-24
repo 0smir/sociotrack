@@ -10,12 +10,14 @@ export default new Vuex.Store({
         firstName: "Abhisek",
         lastName: "Das",
         img: "user-1.jpg",
-        id: "@abhisek.das",
+        id: 2121399,
+        nik_name: "@abhisek.das",
         followers: 10968
       },
       followers:[
         {
           social_network:"Facebook",
+          id: 21213,
           nik_name:"@abhisek.daas",
           img: "user-2.jpg",
           followers_info:{
@@ -26,6 +28,7 @@ export default new Vuex.Store({
         },
         {
           social_network:"Twitter",
+          id: 21212,
           nik_name:"@wholetthedasout",
           img: "user-3.jpg",
           followers_info: {
@@ -36,6 +39,7 @@ export default new Vuex.Store({
         },
         {
           social_network:"LinkedIn",
+          id: 21211,
           nik_name:"@abhisekd3",
           img: "user-1.jpg",
           followers_info: {
@@ -46,6 +50,7 @@ export default new Vuex.Store({
         },
         {
           social_network:"YouTube",
+          id: 21210,
           nik_name:"@TheAbhisekD",
           img: "user-2.jpg",
           followers_info: {
@@ -56,6 +61,7 @@ export default new Vuex.Store({
         },
         {
           social_network:"Snapchat",
+          id: 21219,
           nik_name:"@abhisekd",
           img: "user-3.jpg",
           followers_info: {
@@ -66,6 +72,7 @@ export default new Vuex.Store({
         },
         {
           social_network:"Google+",
+          id: 21218,
           nik_name:"@+AbhisekDas",
           img: "user-4.jpg",
           followers_info: {
@@ -75,6 +82,7 @@ export default new Vuex.Store({
           }
         },
         { social_network:"Vine",
+          id: 21217,
           nik_name:"@1316139228245221376",
           img: "user-5.jpg",
           followers_info: {
@@ -93,6 +101,9 @@ export default new Vuex.Store({
   getters:{
     userData: state =>{
       return state.user.user_data;
+    },
+    userFollowers: state =>{
+      return state.user.followers;
     }
   },
   modules: {

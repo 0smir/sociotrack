@@ -1,19 +1,23 @@
 <template>
     <div class="dashboard container">
         <div class="dashboard-header">
-            <h2 class="title">{{user_data.id}}</h2>
+            <h2 class="title">{{userInfo.nik_name}}</h2>
             <button class="btn btn-add-profile">+ Add Social Profile</button>
         </div>
         <TabsComponent :tabs="tabsList"
                         :initialActiveTab="initialTab"
                         @change-sort="changeReport"/>
+        <TabContentComponent :followers="followers"></TabContentComponent>
+
 
     </div>
     
 </template>
 
 <script>
-    import TabsComponent from "@/components/tabs/TabsComponent"
+    import TabsComponent from "@/components/tabs/TabsComponent";
+    import TabContentComponent from "@/components/tabs/TabContentComponent";
+    import { mapGetters } from 'vuex';
     export default {
         name: "Dashboard",
         data(){
@@ -28,8 +32,12 @@
                 initialTab: null
             }
         },
+        computed:{
+           ...mapGetters({userInfo: 'userData', followers: "userFollowers"})
+        },
         components:{
-            TabsComponent
+            TabsComponent,
+            TabContentComponent
         },
         methods:{
             changeReport(tab){
