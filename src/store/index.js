@@ -9,7 +9,7 @@ export default new Vuex.Store({
       user_data:{
         firstName: "Abhisek",
         lastName: "Das",
-        img: "../assets/img/users/user-1.jpg",
+        img: "user-1.jpg",
         id: "@abhisek.das",
         followers: 10968
       },
@@ -17,7 +17,7 @@ export default new Vuex.Store({
         {
           social_network:"Facebook",
           nik_name:"@abhisek.daas",
-          img: "../assets/img/users/user-1.jpg",
+          img: "user-2.jpg",
           followers_info:{
             total_count: 1701,
             add: 4,
@@ -27,7 +27,7 @@ export default new Vuex.Store({
         {
           social_network:"Twitter",
           nik_name:"@wholetthedasout",
-          img: "../assets/img/users/user-1.jpg",
+          img: "user-3.jpg",
           followers_info: {
             total_count: 1567,
             add: 0,
@@ -37,7 +37,7 @@ export default new Vuex.Store({
         {
           social_network:"LinkedIn",
           nik_name:"@abhisekd3",
-          img: "../assets/img/users/user-1.jpg",
+          img: "user-1.jpg",
           followers_info: {
             total_count: 2106,
             add: 39,
@@ -47,7 +47,7 @@ export default new Vuex.Store({
         {
           social_network:"YouTube",
           nik_name:"@TheAbhisekD",
-          img: "../assets/img/users/user-1.jpg",
+          img: "user-2.jpg",
           followers_info: {
             total_count: 3190,
             add: 22,
@@ -57,7 +57,7 @@ export default new Vuex.Store({
         {
           social_network:"Snapchat",
           nik_name:"@abhisekd",
-          img: "../assets/img/users/user-1.jpg",
+          img: "user-3.jpg",
           followers_info: {
             total_count: 8754,
             add: 0,
@@ -67,7 +67,7 @@ export default new Vuex.Store({
         {
           social_network:"Google+",
           nik_name:"@+AbhisekDas",
-          img: "../assets/img/users/user-1.jpg",
+          img: "user-4.jpg",
           followers_info: {
             total_count: 1033,
             add: 0,
@@ -76,7 +76,7 @@ export default new Vuex.Store({
         },
         { social_network:"Vine",
           nik_name:"@1316139228245221376",
-          img: "../assets/img/users/user-1.jpg",
+          img: "user-5.jpg",
           followers_info: {
             total_count: 1045,
             add: 0,
@@ -89,6 +89,11 @@ export default new Vuex.Store({
   mutations: {
   },
   actions: {
+  },
+  getters:{
+    userData: state =>{
+      return state.user.user_data;
+    }
   },
   modules: {
   }

@@ -1,13 +1,13 @@
 <template>
     <div class="sidebar">
         <div class="user-info">
-            <div class="img-wrapper"><img src="../assets/img/users/user-1.jpg" alt="user" class="ava"></div>
+            <div class="img-wrapper"><img :src="require('@/assets/img/users/' + userInfo.img)" :alt="userFullName" class="ava"></div>
             <div class="info-description">
                 <div class="summary" @click="showDetails">
-                    <span class="user-name">Abhisek Das</span>
+                    <span class="user-name">{{userFullName}}</span>
                     <span class="chevron" :class="{open: detailsShow}"></span>
                 </div>
-                <span class="details followers" v-show="detailsShow">10,568 Followers</span>
+                <span class="details followers" v-show="detailsShow">{{followersInfo}} Followers</span>
             </div>
         </div>
         <nav>
@@ -33,22 +33,41 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
     export default {
         name: "SidebarNav",
         data(){
             return{
+                imgPath: '../assets/img/users/',
                 detailsShow: false
             }
         },
-        // computed:{
-            // userFullName(){
-            //     return this.user_data.firstName + ' ' + this.user_data.lastName
-            // }
-        // },
+        computed:{
+            ...mapGetters({userInfo: 'userData'}),
+
+            userFullName(){
+                return this.userInfo.firstName + ' ' + this.userInfo.lastName
+            },
+            followersInfo(){
+                return this.followersFormatted(this.userInfo.followers);
+            }
+        },
         methods:{
             showDetails(){
                 this.detailsShow = !this.detailsShow;
+            },
+
+            followersFormatted(followersNum){
+                let followersCountConverted;
+                let followersCountStr = followersNum.toString().split('');
+                followersCountStr.reverse();
+                followersCountStr.splice(3, 0, ",").reverse();
+                followersCountStr.reverse();
+                followersCountConverted = followersCountStr.join('');
+
+                return followersCountConverted;
             }
+
         }
     }
 </script>
