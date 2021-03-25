@@ -24,7 +24,7 @@
     .tab-content-wrapper{
         display: grid;
         grid-row-gap: 20px;
-        grid-column-gap: 30px;
+        grid-column-gap: 50px;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 1fr);
     }

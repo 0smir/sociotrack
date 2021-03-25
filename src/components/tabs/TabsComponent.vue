@@ -38,6 +38,7 @@
     .tabs-list{
         display: flex;
         justify-content: space-between;
+        margin-bottom: 25px;
         width: 100%;
         max-width: 250px;
     }

@@ -7,9 +7,7 @@
         <TabsComponent :tabs="tabsList"
                         :initialActiveTab="initialTab"
                         @change-sort="changeReport"/>
-        <TabContentComponent :followers="followers"></TabContentComponent>
-
-
+        <TabContentComponent :followers="followers" :sorting="initialTab"></TabContentComponent>
     </div>
     
 </template>
@@ -22,13 +20,7 @@
         name: "Dashboard",
         data(){
             return{
-                user_data:{
-                    firstName: "Abhisek",
-                    lastName: "Das",
-                    id: "@abhisek.das",
-                    followers: "10968"
-                },
-                tabsList:['Last day', 'Week', 'Month'],
+                tabsList: ['Last day', 'Week', 'Month'],
                 initialTab: null
             }
         },
@@ -76,6 +68,16 @@
             border-radius: 4px;
             width: 100%;
             max-width: 155px;
+            transition: background .35s ease-in;
+            span{
+                margin-right: 3px;
+            }
+            &:hover{
+                color: #fff;
+                background: rgba(#1CAF5E, .5);
+                transition: background .35s ease-in;
+
+            }
         }
     }
 

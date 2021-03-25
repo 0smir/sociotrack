@@ -38,6 +38,17 @@ export default new Vuex.Store({
           }
         },
         {
+          social_network:"Instagram",
+          id: 212187,
+          nik_name:"@wholetthedasout",
+          img: "user-4.jpg",
+          followers_info: {
+            total_count: 1139,
+            add: 11,
+            miss: 0
+          }
+        },
+        {
           social_network:"LinkedIn",
           id: 21211,
           nik_name:"@abhisekd3",
