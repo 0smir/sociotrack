@@ -16,7 +16,10 @@ export default new Vuex.Store({
       },
       followers:[
         {
-          social_network:"Facebook",
+          social_network:{
+            title:"Facebook",
+          logo:"Facebook-color.svg"
+          },
           id: 21213,
           nik_name:"@abhisek.daas",
           img: "user-2.jpg",
@@ -27,7 +30,10 @@ export default new Vuex.Store({
           }
         },
         {
-          social_network:"Twitter",
+          social_network:{
+            title:"Twitter",
+          logo:"Twitter-color.svg"
+          },
           id: 21212,
           nik_name:"@wholetthedasout",
           img: "user-3.jpg",
@@ -38,7 +44,10 @@ export default new Vuex.Store({
           }
         },
         {
-          social_network:"Instagram",
+          social_network:{
+            title:"Instagram",
+          logo:"Instagram-color.svg"
+          },
           id: 212187,
           nik_name:"@wholetthedasout",
           img: "user-4.jpg",
@@ -49,7 +58,10 @@ export default new Vuex.Store({
           }
         },
         {
-          social_network:"LinkedIn",
+          social_network:{
+            title:"LinkedIn",
+          logo:"LinkedIn-color.svg"
+          },
           id: 21211,
           nik_name:"@abhisekd3",
           img: "user-1.jpg",
@@ -60,7 +72,10 @@ export default new Vuex.Store({
           }
         },
         {
-          social_network:"YouTube",
+          social_network:{
+            title:"YouTube",
+          logo:"Youtube-color.svg"
+          },
           id: 21210,
           nik_name:"@TheAbhisekD",
           img: "user-2.jpg",
@@ -71,7 +86,10 @@ export default new Vuex.Store({
           }
         },
         {
-          social_network:"Snapchat",
+          social_network:{
+            title:"Snapchat",
+          logo:"Snapchat.png"
+          },
           id: 21219,
           nik_name:"@abhisekd",
           img: "user-3.jpg",
@@ -82,7 +100,10 @@ export default new Vuex.Store({
           }
         },
         {
-          social_network:"Google+",
+          social_network:{
+            title:"Google+",
+          logo:"GooglePlus-color.svg"
+          },
           id: 21218,
           nik_name:"@+AbhisekDas",
           img: "user-4.jpg",
@@ -92,7 +113,10 @@ export default new Vuex.Store({
             miss: 0
           }
         },
-        { social_network:"Vine",
+        { social_network:{
+          title:"Vine",
+          logo:"Vine-color.svg"
+          },
           id: 21217,
           nik_name:"@1316139228245221376",
           img: "user-5.jpg",

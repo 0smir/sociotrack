@@ -2,7 +2,9 @@
     <div class="follower-item">
 <!--        <router-link to="/" class="nav-link"></router-link>-->
         <div class="network-info" :class="`${getNetworkName}`">
-            <div class="network-logo"></div>
+            <div class="network-logo">
+                <img :src="require('@/assets/img/social_icons/' + networkLogo)" :alt="getNetworkName">
+            </div>
             <div class="followers-info">
                 <span class="followers-count">{{followersCount}}</span>
                 <span class="text">followers</span>
@@ -14,7 +16,7 @@
 
                 <img :src="require('@/assets/img/users/' + follower.img)" alt="avatar" class="avatar">
             </div>
-            <span class="network-name">{{follower.social_network}}</span>
+            <span class="network-name">{{follower.social_network.title}}</span>
             <span class="user-nik">{{follower.nik_name}}</span>
         </div>
     </div>
@@ -28,7 +30,7 @@
         },
         computed:{
             getNetworkName(){
-                let name = (this.follower.social_network).toLowerCase();
+                let name = (this.follower.social_network.title).toLowerCase();
                 let chartPos = name.indexOf('+', 0);
                  if(chartPos > 0){
                    name = name.slice(0, chartPos);
@@ -37,6 +39,9 @@
             },
             followersCount(){
                 return this.followersFormatted(this.follower.followers_info.total_count);
+            },
+            networkLogo(){
+                return this.follower.social_network.logo;
             }
         },
         methods:{
@@ -71,10 +76,10 @@
         background: linear-gradient(180deg, #059FF5 0%, #059FC3 100%), #059FF5;
     }
     .instagram{
-
+        background: linear-gradient(195deg, rgba(146,45,253,1) 1%, rgba(253,45,175,1) 37%, rgba(253,118,45,1) 74%, rgba(253,184,45,1) 96%, rgba(253,233,45,1) 100%), rgb(146,45,253);
     }
     .linkedin{
-    background: linear-gradient(180deg, #059FF5 0%, #059FC3 100%), #059FF5;
+        background: linear-gradient(180deg, #059FF5 0%, #059FC3 100%), #059FF5;
     }
     .youtube{
         background: linear-gradient(180deg, #CE1312 0%, #B01312 100%), #CE1312;
