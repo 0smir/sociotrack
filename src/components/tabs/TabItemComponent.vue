@@ -30,6 +30,11 @@
         line-height: 19px;
         color: #333333;
         border-bottom: 4px solid transparent;
+        transition: font-weight .35s linear;
+        &:hover{
+            font-weight: 500;
+            transition: font-weight .35s linear;
+        }
         &.active{
             border-bottom: 4px solid #B8E986;
             border-radius: 2px;

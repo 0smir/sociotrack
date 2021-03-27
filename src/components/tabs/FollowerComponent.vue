@@ -7,17 +7,21 @@
             </div>
             <div class="followers-info">
                 <span class="followers-count">{{followersCount}}</span>
-                <span class="text">followers</span>
+                <span class="text">{{followers}}</span>
             </div>
-            <div class="followers-update"></div>
+            <div class="followers-update" v-if="followersUpdates">
+                <span class="update update--add" v-if="followersUpdates.add > 0">+{{followersUpdates.add}}</span>
+                <span class="update update--loss" v-if="followersUpdates.loss > 0">-{{followersUpdates.loss}}</span>
+            </div>
         </div>
         <div class="user-info">
             <div class="avatar-wrapper">
-
                 <img :src="require('@/assets/img/users/' + follower.img)" alt="avatar" class="avatar">
             </div>
-            <span class="network-name">{{follower.social_network.title}}</span>
-            <span class="user-nik">{{follower.nik_name}}</span>
+            <div class="user-description">
+                <span class="network-name">{{follower.social_network.title}}</span>
+                <span class="user-nik">{{follower.nik_name}}</span>
+            </div>
         </div>
     </div>
 </template>
@@ -38,10 +42,17 @@
                 return name;
             },
             followersCount(){
-                return this.followersFormatted(this.follower.followers_info.total_count);
+                return this.followersFormatted(this.follower.social_network.followers_info.total_count);
             },
             networkLogo(){
                 return this.follower.social_network.logo;
+            },
+            followers(){
+                console.log(this.follower.social_network.followers_info.followers);
+                return this.follower.social_network.followers_info.followers;
+            },
+            followersUpdates(){
+                return this.follower.social_network.followers_info.followers_updates;
             }
         },
         methods:{
@@ -61,13 +72,22 @@
 
 <style lang="scss" scoped>
     .network-info{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         box-sizing: border-box;
-        padding: 20px;
+        padding: 20px 10px 20px 20px;
+        margin-bottom: 10px;
         width: 200px;
         height: 200px;
-
-        box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.03);
+        color: #fff;
+        box-shadow: 0 2px 9px rgba(0, 0, 0, 0.03);
         border-radius: 10px;
+        transition: transform .35s ease;
+        &:hover{
+            transform: scale(1.04);
+            transition: transform .35s ease;
+        }
     }
     .facebook{
         background: linear-gradient(180deg, #39579A 0%, #2C4479 97.23%), #39579A;
@@ -86,6 +106,7 @@
     }
     .snapchat{
         background: linear-gradient(180deg, #FFFE00 0%, #F3F200 96.43%), #FFFE00;
+        color: #000;
     }
     .google{
         background: linear-gradient(180deg, #F93F2D 0%, #C73F2D 100%), #F93F2D;
@@ -93,5 +114,73 @@
     .vine{
         background: linear-gradient(180deg, #00B687 0%, #008E87 100%), #00B687;
     }
+    .network-logo{
+        height: 20px;
+        margin-bottom: 20px;
+    }
+    .followers-info{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: auto;
+        font-family: 'Oswald', sans-serif;
+        font-weight: normal;
+    }
+    .followers-count{
+        font-size: 42px;
+        font-weight: 700;
+        font-family: 'Oswald', sans-serif;
+        line-height: 1.48;
+    }
+    .text{
+        font-size: 11px;
+        line-height: 1.45;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        text-align: left;
+    }
+    .followers-update{
+        font-size: 26px;
+        line-height: 1;
+        align-self: flex-end;
+        .update{
+            display: inline-flex;
+            position: relative;
+            padding-right: 12px;
+            &::after{
+                display: block;
+                position: absolute;
+                right: 0;
+                bottom: 5px;
+                width: 7px;
+                height: 12px;
+                content: '';
+                background: url('../../assets/img/arrow.svg') no-repeat 50% 50%;
+            }
+            &--add{
+                &::after{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    .user-info{
+        display: flex;
+        .avatar-wrapper{
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+    }
+    .user-description{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 13px;
+        color: #333;
+        .network-name{
+            color: rgba(#333, .5);
+        }
+    }
+
 
 </style>
