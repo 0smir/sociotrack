@@ -88,6 +88,10 @@
             transform: scale(1.04);
             transition: transform .35s ease;
         }
+        @media(max-width: 992px){
+            width: 175px;
+            height: 175px;
+        }
     }
     .facebook{
         background: linear-gradient(180deg, #39579A 0%, #2C4479 97.23%), #39579A;
@@ -117,6 +121,9 @@
     .network-logo{
         height: 20px;
         margin-bottom: 20px;
+        @media(max-width: 992px){
+            margin-bottom: 15px;
+        }
     }
     .followers-info{
         display: flex;
@@ -130,6 +137,9 @@
         font-weight: 700;
         font-family: 'Oswald', sans-serif;
         line-height: 1.48;
+        @media(max-width: 992px){
+            font-size: 42px;
+        }
     }
     .text{
         font-size: 11px;
@@ -166,9 +176,18 @@
 
     .user-info{
         display: flex;
+        width: 200px;
+        @media(max-width: 992px){
+            width: 175px;
+        }
         .avatar-wrapper{
+            width: 35px;
+            height: 35px;
             margin-right: 10px;
             border-radius: 4px;
+            img {
+                object-fit: cover;
+            }
         }
     }
     .user-description{
@@ -177,6 +196,17 @@
         align-items: flex-start;
         font-size: 13px;
         color: #333;
+        width: 100%;
+        .network-name,
+        .user-nik{
+            display: block;
+            width: 100%;
+            max-width: calc(100% - 10px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: left;
+        }
         .network-name{
             color: rgba(#333, .5);
         }

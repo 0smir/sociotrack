@@ -31,8 +31,7 @@
         display: flex;
         box-sizing: border-box;
         grid-column-start: 1;
-        grid-column-end: 5;
-        height: 70px;
+        grid-column-end: 3;
         padding-right: 15px;
         .logo-wrapper{
             display: flex;
@@ -50,6 +49,9 @@
                 height: 100%;
                 width: 100%;
                 background: rgba(#fff, 0.1);
+            }
+            @media(max-width: 992px){
+                max-width: 180px;
             }
         }
         .right-header-content{
@@ -77,7 +79,6 @@
             }
 
             &:hover{
-                /*background-color: rgba(#1CAF5E, .3);*/
                 &:after{
                     animation: bell .3s linear 2;
                 }

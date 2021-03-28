@@ -23,6 +23,10 @@
         grid-row-start: 3;
         grid-row-end: 4;
         background: #53CC71;
+        @media (max-width: 768px){
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
     }
     .footer-link-list{
         display: flex;
@@ -34,10 +38,16 @@
         width: 100%;
         max-width: 170px;
         border-top: 1px solid rgba(0, 0, 0, .07);
+        @media (max-width: 768px){
+            max-width: 300px;
+        }
     }
     .footer-link-item{
-        margin-bottom: 15px;
+        margin-bottom: 14px;
         width: calc(100% / 3);
+        @media (max-width: 768px){
+            width: calc(100% / 5);
+        }
     }
     .footer-link{
         display: flex;

@@ -5,9 +5,9 @@
             <div class="info-description">
                 <div class="summary" @click="showDetails">
                     <span class="user-name">{{userFullName}}</span>
-                    <span class="chevron" :class="{open: detailsShow}"></span>
+                    <span class="chevron" :class="{open: !detailsShow}"></span>
                 </div>
-                <span class="details followers" v-show="detailsShow">{{followersInfo}} Followers</span>
+                <span class="details followers" :class="{open: detailsShow}">{{followersInfo}} Followers</span>
             </div>
         </div>
         <nav>
@@ -80,10 +80,17 @@
         grid-row-start: 2;
         grid-row-end: 3;
         background: linear-gradient(180deg, #2DBC80 0.55%, #53CC71 99.33%);
+        @media (max-width: 992px){
+            padding: 40px 15px 0;
+        }
     }
     .user-info{
         display: flex;
         margin-bottom: 40px;
+        @media (max-width: 992px){
+            align-items: center;
+            flex-direction: column;
+        }
         .img-wrapper{
             display: flex;
             height: 45px;
@@ -92,6 +99,9 @@
             justify-content: center;
             align-items: center;
             background: #fff;
+            @media (max-width: 992px){
+                margin-bottom: 15px;
+            }
         }
         .ava{
             width: 45px;
@@ -105,8 +115,10 @@
             padding-left: 10px;
             width: 100%;
             max-width: calc(100% - 55px);
-            .summary{
-                display: block;
+            @media (max-width: 992px) {
+                align-items: center;
+                padding-left: 0;
+                max-width: 100%;
             }
             .summary{
                 display: flex;
@@ -119,6 +131,9 @@
                 .user-name{
                     display: flex;
                     margin-right: 5px;
+                    @media (max-width: 992px) {
+                        padding-left: 25px;
+                    }
                 }
                 .chevron{
                     display: inline-block;
@@ -133,12 +148,15 @@
                 }
             }
             .details{
+                visibility: hidden;
                 margin-top: 5px;
                 font-weight: 700;
                 font-size: 12px;
                 color: rgba(0, 0, 0, 0.3);
+                &.open{
+                    visibility: visible;
+                }
             }
-
         }
     }
     .btn-logout,
@@ -149,22 +167,33 @@
         font-size: 14px;
         color: #fff;
         border-radius: 5px;
+        @media(max-width: 992px){
+            padding: 15px 15px;
+        }
+        @media (max-width: 768px){
+            justify-content: center;
+            .link-text{
+                display: none;
+            }
+        }
         &:hover{
             background: rgba(#fff, .1);
-            .nav-icon--dashboard{
-                transform: scale(1.15);
-            }
-            .nav-icon--feed{
-                transform: scale(1.15) rotateZ(-15deg);
-            }
-            .nav-icon--friends{
-                transform: rotateY(720deg);
-            }
-            .nav-icon--settings{
-                transform: rotate(-270deg);
-            }
-            .nav-icon--logout{
-                transform: translateX(7px) skewX(-10deg);
+            .nav-icon{
+                &--dashboard{
+                    transform: scale(1.15);
+                }
+                &--feed{
+                    transform: scale(1.15) rotateZ(-15deg);
+                }
+                &--friends{
+                    transform: rotateY(720deg);
+                }
+                &--settings{
+                    transform: rotate(-270deg);
+                }
+                &--logout{
+                    transform: translateX(7px) skewX(-10deg);
+                }
             }
         }
     }
@@ -183,6 +212,9 @@
         margin-right: 15px;
         height: 20px;
         width: 20px;
+        @media (max-width: 768px){
+            margin-right: 0;
+        }
         &--dashboard{
             background: url('../assets/img/nav/dashboard-icon.svg') no-repeat 50% 50%;
             transition: transform .35s ease-in-out;

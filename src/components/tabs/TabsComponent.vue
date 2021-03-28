@@ -41,6 +41,9 @@
         margin-bottom: 25px;
         width: 100%;
         max-width: 250px;
+        @media(max-width: 768px){
+            margin: 0 auto 30px;
+        }
     }
 
 </style>

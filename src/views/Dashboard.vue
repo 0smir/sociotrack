@@ -46,6 +46,9 @@
         &-header{
             display: flex;
             align-items: center;
+            @media(max-width: 600px){
+                flex-direction: column;
+            }
             .title{
                 margin-right: auto;
                 font-family: 'Roboto', sans-serif;
@@ -76,7 +79,9 @@
                 color: #fff;
                 background: rgba(#1CAF5E, .5);
                 transition: background .35s ease-in;
-
+            }
+            @media(max-width: 600px){
+                margin: 0 auto 30px;
             }
         }
     }

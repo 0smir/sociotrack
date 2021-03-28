@@ -26,5 +26,8 @@ h1, h2{
   padding: 0 15px;
   max-width: 980px;
   margin: 0 auto;
-  outline: 1px solid pink
+  outline: 1px solid pink;
+  @media(max-width: 1200px){
+    max-width: 730px;
+  }
 }

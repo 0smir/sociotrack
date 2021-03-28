@@ -34,18 +34,29 @@
 
   .root{
     display: grid;
-    grid-template-columns: 240px repeat(2, 1fr);
+    grid-template-columns: 240px auto;
     grid-template-rows: 70px  auto 96px;
+    @media(max-width: 992px){
+      grid-template-columns: 180px auto;
+    }
+    @media (max-width: 768px){
+      grid-template-columns: 96px auto;
+      grid-template-rows: 70px  auto 70px;
+    }
   }
   main{
-    padding-top: 70px;
+    padding: 70px 0 96px;
     background: #EFF7ED;
-    height: calc(100vh - 70px);
+    min-height: calc(100vh - 70px);
     justify-content: center;
     grid-column-start: 2;
-    grid-column-end: 4;
+    grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 4;
+    @media (max-width: 768px){
+      padding: 70px 0;
+      grid-row-end: 3;
+    }
   }
 
 }
