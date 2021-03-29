@@ -2,12 +2,14 @@
     <div class="dashboard container">
         <div class="dashboard-header">
             <h2 class="title">{{userInfo.nik_name}}</h2>
-            <button class="btn btn-add-profile">+ Add Social Profile</button>
+            <button class="btn btn-add-profile" @click="toggleModal">+ Add Social Profile</button>
         </div>
         <TabsComponent :tabs="tabsList"
                         :initialActiveTab="initialTab"
                         @change-sort="changeReport"/>
         <TabContentComponent :followers="followers" :sorting="initialTab"></TabContentComponent>
+        <ModalOverlay :open="isOpenModal"
+        @close-modal="toggleModal"></ModalOverlay>
     </div>
     
 </template>
@@ -15,6 +17,8 @@
 <script>
     import TabsComponent from "@/components/tabs/TabsComponent";
     import TabContentComponent from "@/components/tabs/TabContentComponent";
+    import ModalOverlay from "@/components/modals/ModalOverlay";
+
     import { mapGetters } from 'vuex';
     export default {
         name: "Dashboard",
@@ -22,16 +26,19 @@
             return{
                 tabsList: ['Last day', 'Week', 'Month'],
                 initialTab: null,
-                followers: Array
+                followers: Array,
+                isOpenModal: false
             }
+        },
+        components:{
+            TabsComponent,
+            TabContentComponent,
+            ModalOverlay
         },
         computed:{
            ...mapGetters({userInfo: 'userData', followersData: "userFollowers", weekUserInfo: 'weekFollowersInfo', monthUserInfo: 'monthFollowersInfo'}),
         },
-        components:{
-            TabsComponent,
-            TabContentComponent
-        },
+
         created() {
             this.followers = this.followersData
         },
@@ -45,6 +52,9 @@
                 }else{
                     this.followers = this.followersData;
                 }
+            },
+            toggleModal(){
+                this.isOpenModal = !this.isOpenModal;
             }
         }
 
@@ -71,14 +81,8 @@
         .btn-add-profile{
             display: flex;
             padding: 10px 15px;
-            background: transparent;
-            font-family: 'Roboto', sans-serif;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 1.142;
             color: #1CAF5E;
             border: 1px solid #1CAF5E;
-            border-radius: 4px;
             width: 100%;
             max-width: 155px;
             transition: background .35s ease-in;

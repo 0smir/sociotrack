@@ -20,14 +20,33 @@ h1, h2{
   margin-top: 0;
 }
 
+h2{
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+p{
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
 .container{
   box-sizing: border-box;
   width: 100%;
   padding: 0 15px;
   max-width: 980px;
   margin: 0 auto;
-  outline: 1px solid pink;
   @media(max-width: 1200px){
     max-width: 730px;
   }
+}
+
+.btn{
+  background: transparent;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.142;
+  border-radius: 4px;
 }
