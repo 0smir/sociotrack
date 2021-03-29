@@ -40,7 +40,7 @@
       grid-template-columns: 180px auto;
     }
     @media (max-width: 768px){
-      grid-template-columns: 96px auto;
+      grid-template-columns: 160px auto;
       grid-template-rows: 70px  auto 70px;
     }
   }

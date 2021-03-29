@@ -134,6 +134,9 @@
                     @media (max-width: 992px) {
                         padding-left: 25px;
                     }
+                    @media(max-width: 768px){
+                        padding-left: 0;
+                    }
                 }
                 .chevron{
                     display: inline-block;
@@ -145,6 +148,9 @@
                     &.open{
                         transform: rotate(0deg);
                     }
+                    @media(max-width: 768px){
+                        display: none;
+                    }
                 }
             }
             .details{
@@ -154,6 +160,9 @@
                 font-size: 12px;
                 color: rgba(0, 0, 0, 0.3);
                 &.open{
+                    visibility: visible;
+                }
+                @media(max-width: 768px){
                     visibility: visible;
                 }
             }
@@ -171,10 +180,8 @@
             padding: 15px 15px;
         }
         @media (max-width: 768px){
-            justify-content: center;
-            .link-text{
-                display: none;
-            }
+            font-size: 13px;
+            padding: 15px 7px 15px 10px;
         }
         &:hover{
             background: rgba(#fff, .1);
@@ -213,7 +220,7 @@
         height: 20px;
         width: 20px;
         @media (max-width: 768px){
-            margin-right: 0;
+            margin-right: 10px;
         }
         &--dashboard{
             background: url('../assets/img/nav/dashboard-icon.svg') no-repeat 50% 50%;

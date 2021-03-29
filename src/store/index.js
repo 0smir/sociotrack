@@ -155,7 +155,17 @@ export default new Vuex.Store({
     },
     userFollowers: state =>{
       return state.user.followers;
-    }
+    },
+    weekFollowersInfo: (state, getters) =>{
+      return getters.userFollowers.filter(function (item) {
+        return item.social_network.followers_info.followers_updates && item.social_network.followers_info.followers_updates.add > 0;
+      })
+    },
+    monthFollowersInfo: (state, getters) =>{
+      return getters.userFollowers.filter(function (item) {
+        return item.social_network.followers_info.followers_updates && item.social_network.followers_info.followers_updates.loss > 0;
+      })
+    },
   },
   modules: {
   }

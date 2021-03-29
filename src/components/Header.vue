@@ -53,6 +53,9 @@
             @media(max-width: 992px){
                 max-width: 180px;
             }
+            @media(max-width: 768px){
+                max-width: 160px;
+            }
         }
         .right-header-content{
             display: flex;

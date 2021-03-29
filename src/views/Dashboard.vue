@@ -21,20 +21,30 @@
         data(){
             return{
                 tabsList: ['Last day', 'Week', 'Month'],
-                initialTab: null
+                initialTab: null,
+                followers: Array
             }
         },
         computed:{
-           ...mapGetters({userInfo: 'userData', followers: "userFollowers"})
+           ...mapGetters({userInfo: 'userData', followersData: "userFollowers", weekUserInfo: 'weekFollowersInfo', monthUserInfo: 'monthFollowersInfo'}),
         },
         components:{
             TabsComponent,
             TabContentComponent
         },
+        created() {
+            this.followers = this.followersData
+        },
         methods:{
             changeReport(tab){
                 this.initialTab = tab;
-                console.log('will sort data some how');
+                if(tab === 'Week'){
+                   this.followers = this.weekUserInfo;
+                }else if(tab === 'Month'){
+                    this.followers =  this.monthUserInfo;
+                }else{
+                    this.followers = this.followersData;
+                }
             }
         }
 

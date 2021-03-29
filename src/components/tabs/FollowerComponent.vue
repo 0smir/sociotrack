@@ -48,7 +48,6 @@
                 return this.follower.social_network.logo;
             },
             followers(){
-                console.log(this.follower.social_network.followers_info.followers);
                 return this.follower.social_network.followers_info.followers;
             },
             followersUpdates(){
