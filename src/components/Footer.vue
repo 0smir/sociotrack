@@ -40,6 +40,7 @@
         border-top: 1px solid rgba(0, 0, 0, .07);
         @media (max-width: 768px){
             max-width: 300px;
+            border-top: none;
         }
     }
     .footer-link-item{

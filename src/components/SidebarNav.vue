@@ -83,6 +83,9 @@
         @media (max-width: 992px){
             padding: 40px 15px 0;
         }
+        @media (max-width: 768px){
+            border-bottom: 1px solid rgba(0, 0, 0, .07);
+        }
     }
     .user-info{
         display: flex;
@@ -209,6 +212,10 @@
         width: 100%;
         border: none;
         cursor: pointer;
+        &:focus{
+            border: none;
+            outline-color: #1CAF5E;
+        }
     }
     .router-link-exact-active{
         background: rgba(#fff, .1);
