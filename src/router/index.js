@@ -8,7 +8,7 @@ const routes = [
   {
     path: '/',
     name: 'Dashboard',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Dashboard.vue')
+    component: () => import(/* webpackChunkName: "dashboard" */ '../views/Dashboard.vue')
   },
   {
     path: '/about',
@@ -17,31 +17,31 @@ const routes = [
   },{
     path:'/settings',
     name: 'Settings',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Settings.vue')
+    component: () => import(/* webpackChunkName: "settings" */ '../views/Settings.vue')
   },{
     path:'/friends',
     name: 'AddFriends',
-    component: () => import(/* webpackChunkName: "about" */ '../views/AddFriends.vue')
+    component: () => import(/* webpackChunkName: "friends" */ '../views/AddFriends.vue')
   },{
     path:'/feed',
     name: 'SocialFeed',
-    component: () => import(/* webpackChunkName: "about" */ '../views/SocialFeed.vue')
+    component: () => import(/* webpackChunkName: "feed" */ '../views/SocialFeed.vue')
   },{
     path:'/help',
     name: 'Help',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Help.vue')
+    component: () => import(/* webpackChunkName: "help" */ '../views/Help.vue')
   },{
     path:'/terms',
     name: 'Terms',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Terms.vue')
+    component: () => import(/* webpackChunkName: "terms" */ '../views/Terms.vue')
   },{
     path:'/report',
     name: 'Report',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Report.vue')
+    component: () => import(/* webpackChunkName: "report" */ '../views/Report.vue')
   },{
     path:'/privacy',
     name: 'Privacy',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Privacy.vue')
+    component: () => import(/* webpackChunkName: "privacy" */ '../views/Privacy.vue')
   }
 ];
 
