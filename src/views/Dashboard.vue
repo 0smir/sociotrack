@@ -9,7 +9,11 @@
                         @change-sort="changeReport"/>
         <TabContentComponent :followers="followers" :sorting="initialTab"></TabContentComponent>
         <ModalOverlay :open="isOpenModal"
-        @close-modal="toggleModal"></ModalOverlay>
+                      @close-modal="toggleModal">
+            <Modal @close-modal="closeModal"
+                   :isOpen="toggleModal">
+            </Modal>
+        </ModalOverlay>
     </div>
     
 </template>
@@ -18,6 +22,7 @@
     import TabsComponent from "@/components/tabs/TabsComponent";
     import TabContentComponent from "@/components/tabs/TabContentComponent";
     import ModalOverlay from "@/components/modals/ModalOverlay";
+    import Modal from "@/components/modals/Modal"
 
     import { mapGetters } from 'vuex';
     export default {
@@ -33,10 +38,14 @@
         components:{
             TabsComponent,
             TabContentComponent,
-            ModalOverlay
+            ModalOverlay,
+            Modal
         },
         computed:{
            ...mapGetters({userInfo: 'userData', followersData: "userFollowers", weekUserInfo: 'weekFollowersInfo', monthUserInfo: 'monthFollowersInfo'}),
+            isOpen(){
+                return this.open;
+            }
         },
 
         created() {
@@ -55,6 +64,9 @@
             },
             toggleModal(){
                 this.isOpenModal = !this.isOpenModal;
+            },
+            closeModal(){
+                this.toggleModal();
             }
         }
 

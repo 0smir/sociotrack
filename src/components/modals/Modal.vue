@@ -42,53 +42,7 @@
 </script>
 
 <style lang="scss" scoped>
-    .modal-wrapper{
-        height: auto;
-        padding: 15px 30px;
-        margin: 115px auto 20px;
-        width: 100%;
-        max-width: 600px;
-    }
 
-    .modal{
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: stretch;
-        padding: 22px 25px 30px;
-        border-radius: 4px;
-        background: #fff;
-    }
-    .modal-content{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: stretch;
-    }
-
-    .close{
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        display: block;
-        width: 30px;
-        height: 30px;
-        border: none;
-        background: url("../../assets/img/close.svg") transparent no-repeat 50% 50%;
-        background-size: 35%;
-    }
-    .modal-title{
-        margin-bottom: 25px;
-        text-align: left;
-    }
-    .modal-description-text{
-        font-size: 14px;
-        line-height: 1.2;
-        color: #4F4F4F;
-        text-align: left;
-        margin: 0 0 20px;
-    }
     label{
         display: block;
         margin-bottom: 12px;

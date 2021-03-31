@@ -1,19 +1,15 @@
 <template>
     <div class="overlay" :class="{'open': isOpen}" @click="hideModal">
-        <Modal @close-modal="closeModal"
-                :isOpen="isOpen"></Modal>
+        <slot></slot>
     </div>
 </template>
 
 <script>
-    import Modal from "@/components/modals/Modal"
+
     export default {
         name: "ModalOverlay",
         props:{
             open: Boolean
-        },
-        components:{
-            Modal
         },
         computed:{
             isOpen(){
@@ -26,9 +22,6 @@
                 if(target === this.$el){
                     this.$emit('close-modal');
                 }
-            },
-            closeModal(){
-                this.$emit('close-modal');
             }
         }
 

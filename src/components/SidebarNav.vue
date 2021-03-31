@@ -25,22 +25,35 @@
                     <router-link exact to="/settings" class="nav-link">
                         <span class="nav-icon nav-icon--settings"></span> <span class="link-text">Settings</span></router-link></li>
                 <li class="nav-item">
-                    <button class="btn btn-logout">
+                    <button class="btn btn-logout" @click="toggleModal">
                         <span class="nav-icon nav-icon--logout"></span> <span class="link-text">Log out</span></button></li>
             </ul>
         </nav>
+        <ModalOverlay :open="isOpenModal"
+                      @close-modal="toggleModal">
+            <LogoutModal @close-modal="closeModal"
+                   :isOpen="toggleModal">
+            </LogoutModal>
+        </ModalOverlay>
     </div>
 </template>
 
 <script>
+    import ModalOverlay from "@/components/modals/ModalOverlay";
+    import LogoutModal from "@/components/modals/LogoutModal";
     import { mapGetters } from 'vuex';
     export default {
         name: "SidebarNav",
         data(){
             return{
+                isOpenModal: false,
                 imgPath: '../assets/img/users/',
                 detailsShow: false
             }
+        },
+        components:{
+            ModalOverlay,
+            LogoutModal
         },
         computed:{
             ...mapGetters({userInfo: 'userData'}),
@@ -66,6 +79,12 @@
                 followersCountConverted = followersCountStr.join('');
 
                 return followersCountConverted;
+            },
+            toggleModal(){
+                this.isOpenModal = !this.isOpenModal;
+            },
+            closeModal(){
+                this.toggleModal();
             }
 
         }
