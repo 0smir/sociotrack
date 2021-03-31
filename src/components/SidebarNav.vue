@@ -32,7 +32,7 @@
         <ModalOverlay :open="isOpenModal"
                       @close-modal="toggleModal">
             <LogoutModal @close-modal="closeModal"
-                   :isOpen="toggleModal">
+                   :isOpen="isOpenModal">
             </LogoutModal>
         </ModalOverlay>
     </div>

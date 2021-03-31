@@ -15,6 +15,11 @@
   padding: 22px 25px 30px;
   border-radius: 4px;
   background: #fff;
+  .close{
+    &:hover{
+      background-color: rgba(#1CAF5E, .3);
+    }
+  }
 }
 .modal-content{
   display: flex;

@@ -11,7 +11,7 @@
         <ModalOverlay :open="isOpenModal"
                       @close-modal="toggleModal">
             <Modal @close-modal="closeModal"
-                   :isOpen="toggleModal">
+                   :isOpen="isOpenModal">
             </Modal>
         </ModalOverlay>
     </div>

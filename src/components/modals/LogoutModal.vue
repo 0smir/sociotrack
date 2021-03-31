@@ -27,15 +27,6 @@
             close(){
                 this.$emit('close-modal');
             }
-        },
-        watch:{
-            isOpen(){
-                if(!this.isOpen){
-                    this.$el.getElementsByTagName('input')[0].blur();
-                }else{
-                    this.$el.getElementsByTagName('input')[0].focus();
-                }
-            }
         }
     }
 </script>
