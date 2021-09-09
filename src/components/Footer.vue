@@ -18,15 +18,10 @@
 
 <style lang="scss" scoped>
     footer{
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 3;
-        grid-row-end: 4;
+        display: flex;
+        height: 96px;
+        width: 100%;
         background: #53CC71;
-        @media (max-width: 768px){
-            grid-column-start: 1;
-            grid-column-end: 3;
-        }
     }
     .footer-link-list{
         display: flex;

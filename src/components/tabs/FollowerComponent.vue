@@ -1,18 +1,20 @@
 <template>
-    <div class="follower-item">
-<!--        <router-link to="/" class="nav-link"></router-link>-->
+    <li class="follower-item">
         <div class="network-info" :class="`${getNetworkName}`">
-            <div class="network-logo">
-                <img :src="require('@/assets/img/social_icons/' + networkLogo)" :alt="getNetworkName">
+            <div class="content">
+                <div class="network-logo">
+                    <img :src="require('@/assets/img/social_icons/' + networkLogo)" :alt="getNetworkName">
+                </div>
+                <div class="followers-info">
+                    <span class="followers-count">{{followersCount}}</span>
+                    <span class="text">{{followers}}</span>
+                </div>
+                <div class="followers-update" v-if="followersUpdates">
+                    <span class="update update--add" v-if="followersUpdates.add > 0">+{{followersUpdates.add}}</span>
+                    <span class="update update--loss" v-if="followersUpdates.loss > 0">-{{followersUpdates.loss}}</span>
+                </div>
             </div>
-            <div class="followers-info">
-                <span class="followers-count">{{followersCount}}</span>
-                <span class="text">{{followers}}</span>
-            </div>
-            <div class="followers-update" v-if="followersUpdates">
-                <span class="update update--add" v-if="followersUpdates.add > 0">+{{followersUpdates.add}}</span>
-                <span class="update update--loss" v-if="followersUpdates.loss > 0">-{{followersUpdates.loss}}</span>
-            </div>
+            
         </div>
         <div class="user-info">
             <div class="avatar-wrapper">
@@ -23,7 +25,7 @@
                 <span class="user-nik">{{follower.nik_name}}</span>
             </div>
         </div>
-    </div>
+    </li>
 </template>
 
 <script>
@@ -70,26 +72,62 @@
 </script>
 
 <style lang="scss" scoped>
-    .network-info{
+    .follower-item{
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        width: calc(100%/4 - 7px);
+        list-style: none;
+        &:nth-of-type(4n){
+            margin-right: 0;
+        }
+
+        @media(max-width: 1199px){
+            width: calc(100%/3 - 7px);
+            &:last-of-type{
+                margin-right: auto;
+            }
+        }
+        @media(max-width: 992px){
+            width: calc(100%/3 - 7px);
+        }
+        @media(max-width: 768px){}
+
+
+    }
+    .network-info{
+        display: flex;
+        /*flex-direction: column;*/
+        /*align-items: flex-start;*/
         box-sizing: border-box;
-        padding: 20px 10px 20px 20px;
+        position: relative;
+        /*padding: 20px 10px 20px 20px;*/
         margin-bottom: 10px;
-        width: 200px;
-        height: 200px;
+        width: 100%;
+        /*max-width: 200px;*/
+        padding-bottom: 80%;
         color: #fff;
         box-shadow: 0 2px 9px rgba(0, 0, 0, 0.03);
         border-radius: 10px;
         transition: transform .35s ease;
+        @media(max-width: 992px){
+            /*width: 175px;*/
+            padding-bottom: 75%;
+        }
         &:hover{
             transform: scale(1.04);
             transition: transform .35s ease;
         }
-        @media(max-width: 992px){
-            width: 175px;
-            height: 175px;
+        .content{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px 10px 20px 20px;
+
         }
     }
     .facebook{

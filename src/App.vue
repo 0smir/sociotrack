@@ -33,29 +33,18 @@
   color: #2c3e50;
 
   .root{
-    display: grid;
-    grid-template-columns: 240px auto;
-    grid-template-rows: 70px  auto 96px;
-    @media(max-width: 992px){
-      grid-template-columns: 180px auto;
-    }
-    @media (max-width: 768px){
-      grid-template-columns: 160px auto;
-      grid-template-rows: 70px  auto 70px;
-    }
+    display: flex;
+    flex-wrap: wrap;
   }
   main{
+    display: flex;
     padding: 70px 0 96px;
     background: #EFF7ED;
+    width: calc(100% - 240px);
     min-height: calc(100vh - 70px);
     justify-content: center;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 4;
     @media (max-width: 768px){
       padding: 70px 0;
-      grid-row-end: 3;
     }
   }
 

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-    import FollowerComponent from "@/components/tabs/FollowerComponent"
+    import FollowerComponent from "@/components/tabs/FollowerComponent.vue"
     export default {
         name: "TabContentComponent",
         props:{
@@ -22,20 +22,10 @@
 
 <style lang="scss" scoped>
     .tab-content-wrapper{
-        display: grid;
-        grid-row-gap: 20px;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        justify-items: center;
-        @media(max-width: 1200px){
-            grid-template-columns: repeat(3, 1fr);
-        }
-        @media(max-width: 768px){
-            grid-template-columns: repeat(2, 1fr);
-        }
-        @media(max-width: 600px){
-            grid-template-columns:  1fr;
-        }
+        display: flex;
+        flex-wrap: wrap;
+        /*justify-content: flex-start;*/
+        background: lightpink;
     }
 
 </style>

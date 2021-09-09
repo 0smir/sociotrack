@@ -19,10 +19,10 @@
 </template>
 
 <script>
-    import TabsComponent from "@/components/tabs/TabsComponent";
-    import TabContentComponent from "@/components/tabs/TabContentComponent";
-    import ModalOverlay from "@/components/modals/ModalOverlay";
-    import Modal from "@/components/modals/Modal"
+    import TabsComponent from "@/components/tabs/TabsComponent.vue";
+    import TabContentComponent from "@/components/tabs/TabContentComponent.vue";
+    import ModalOverlay from "@/components/modals/ModalOverlay.vue";
+    import Modal from "@/components/modals/Modal.vue"
 
     import { mapGetters } from 'vuex';
     export default {

@@ -93,11 +93,11 @@
 
 <style lang="scss" scoped>
     .sidebar{
+        display: flex;
+        flex-direction: column;
+        width: 240px;
         padding: 40px 20px 0;
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 2;
-        grid-row-end: 3;
+
         background: linear-gradient(180deg, #2DBC80 0.55%, #53CC71 99.33%);
         @media (max-width: 992px){
             padding: 40px 15px 0;
