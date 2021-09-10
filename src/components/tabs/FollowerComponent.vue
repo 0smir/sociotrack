@@ -77,11 +77,7 @@
         flex-direction: column;
         width: calc(100%/4 - 15px);
         list-style: none;
-        margin: 0 0 15px;
-        /*&:nth-of-type(4n){*/
-        /*    margin-right: 0;*/
-        /*}*/
-
+        margin: 0 0 40px;
         @media(max-width: 1199px){
             width: calc(100%/3 - 15px);
         }
@@ -91,7 +87,9 @@
         @media(max-width: 768px){
             width: calc(100%/2 - 15px);
         }
-
+        @media (max-width: 480px){
+            width: 100%;
+        }
     }
     .network-info{
         display: flex;

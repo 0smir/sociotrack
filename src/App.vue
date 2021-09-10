@@ -50,6 +50,10 @@
       width: calc(100% - 160px);
       padding: 70px 0;
     }
+    @media(max-width: 600px){
+      width: calc(100% - 80px);
+      margin-left: auto;
+    }
   }
 
 }

@@ -97,7 +97,6 @@
         flex-direction: column;
         width: 240px;
         padding: 40px 20px 0;
-
         background: linear-gradient(180deg, #2DBC80 0.55%, #53CC71 99.33%);
         @media (max-width: 992px){
             width: 180px;
@@ -108,7 +107,11 @@
             border-bottom: 1px solid rgba(0, 0, 0, .07);
         }
         @media (max-width: 600px){
-
+            width: 80px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
         }
     }
     .user-info{
@@ -117,6 +120,9 @@
         @media (max-width: 992px){
             align-items: center;
             flex-direction: column;
+        }
+        @media (max-width: 600px){
+            visibility: hidden;
         }
         .img-wrapper{
             display: flex;
@@ -192,6 +198,9 @@
                 @media(max-width: 768px){
                     visibility: visible;
                 }
+                @media(max-width: 600px){
+                    display: none;
+                }
             }
         }
     }
@@ -209,6 +218,9 @@
         @media (max-width: 768px){
             font-size: 13px;
             padding: 15px 7px 15px 10px;
+        }
+        @media(max-width: 600px){
+            padding: 15px 10px 15px;
         }
         &:hover{
             background: rgba(#fff, .1);
@@ -231,6 +243,12 @@
             }
         }
     }
+    .link-text{
+        display: inline-block;
+        @media (max-width: 600px){
+            display: none;
+        }
+    }
     .btn-logout{
         background: transparent;
         width: 100%;
@@ -246,12 +264,15 @@
     }
 
     .nav-icon{
-        display: inline-block;
+        display: inline-flex;
         margin-right: 15px;
         height: 20px;
         width: 20px;
         @media (max-width: 768px){
             margin-right: 10px;
+        }
+        @media(max-width: 600px){
+            margin: 0 auto;
         }
         &--dashboard{
             background: url('../assets/img/nav/dashboard-icon.svg') no-repeat 50% 50%;

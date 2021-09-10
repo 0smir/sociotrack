@@ -33,6 +33,9 @@
         height: 70px;
         box-sizing: border-box;
         padding-right: 15px;
+        @media (max-width: 600px){
+            z-index: 5;
+        }
         .right-header-content{
             display: flex;
             justify-content: space-between;

@@ -1,10 +1,10 @@
 <template>
-    <div class="tab-content-wrapper">
+    <ul class="tab-content-wrapper">
         <FollowerComponent v-for="follower in followers"
                                 :key="follower.id"
                                 :follower="follower"
         ></FollowerComponent>
-    </div>
+    </ul>
 </template>
 
 <script>
@@ -24,12 +24,17 @@
     .tab-content-wrapper{
         display: flex;
         flex-wrap: wrap;
-
         justify-content: flex-start;
         background: lightpink;
         @media(max-width: 768px){
             justify-content: space-between;
         }
+        @media(max-width: 480px){
+            width: 100%;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+
     }
 
 </style>
