@@ -43,7 +43,11 @@
     width: calc(100% - 240px);
     min-height: calc(100vh - 70px);
     justify-content: center;
+    @media (max-width: 992px){
+      width: calc(100% - 180px);
+    }
     @media (max-width: 768px){
+      width: calc(100% - 160px);
       padding: 70px 0;
     }
   }

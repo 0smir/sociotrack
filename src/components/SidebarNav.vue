@@ -100,9 +100,11 @@
 
         background: linear-gradient(180deg, #2DBC80 0.55%, #53CC71 99.33%);
         @media (max-width: 992px){
+            width: 180px;
             padding: 40px 15px 0;
         }
         @media (max-width: 768px){
+            width: 160px;
             border-bottom: 1px solid rgba(0, 0, 0, .07);
         }
     }
