@@ -24,8 +24,12 @@
     .tab-content-wrapper{
         display: flex;
         flex-wrap: wrap;
-        /*justify-content: flex-start;*/
+
+        justify-content: flex-start;
         background: lightpink;
+        @media(max-width: 768px){
+            justify-content: space-between;
+        }
     }
 
 </style>

@@ -107,6 +107,9 @@
             width: 160px;
             border-bottom: 1px solid rgba(0, 0, 0, .07);
         }
+        @media (max-width: 600px){
+
+        }
     }
     .user-info{
         display: flex;

@@ -38,7 +38,6 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .btn-search{
             position: relative;
             display: block;
